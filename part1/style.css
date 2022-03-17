@@ -54,14 +54,6 @@ a {
   text-decoration: none;
 }
 
-body {
-  background-color: lightgray;
-}
-
-.nav {
-  background-color: white;
-}
-
 .nav__container {
   max-width: 810px;
   margin: 0 auto;
@@ -114,9 +106,24 @@ body {
   font-size: 14px;
 }
 
+.navItem__link:hover {
+  opacity: 0.6;
+}
+
+.mainImage__container {
+  height: 600px;
+  margin-bottom: 90px;
+}
+
+.mainImage__image {
+  background-image: url(images/2000x800.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .about {
   padding-bottom: 100px;
-  background-color: white;
 }
 
 .about__container {
@@ -142,7 +149,7 @@ body {
   line-height: 1;
   padding-bottom: 8px;
   color: #393E46;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   border-bottom: 1px solid #393E46;
 }
@@ -196,6 +203,7 @@ body {
 
 .bicycle {
   background-color: white;
+  padding-bottom: 80px;
 }
 
 .bicycle__container {
@@ -213,11 +221,15 @@ body {
           align-items: center;
 }
 
+.bicycle__container > * + * {
+  margin-top: 80px;
+}
+
 .bicycle__title {
   line-height: 1;
   padding-bottom: 8px;
   color: #393E46;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   border-bottom: 1px solid #393E46;
 }
@@ -232,15 +244,57 @@ body {
 }
 
 .bicycle__list > * + * {
-  margin-left: 10px;
+  margin-left: 18px;
 }
 
 .bicycleItem {
-  width: calc((810px - 20px)/3);
+  width: calc((810px - 36px)/3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bicycleItem * + * {
+  margin-top: 10px;
 }
 
 .bicycleItem__image {
   width: 100%;
   height: auto;
+}
+
+.bicycleItem__title {
+  font-weight: bold;
+}
+
+.bicycleItem__description {
+  font-size: 14px;
+}
+
+.footer {
+  padding-bottom: 10px;
+}
+
+.footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.copyright__text {
+  font-size: 8px;
 }
 /*# sourceMappingURL=style.css.map */
