@@ -6,27 +6,35 @@ a {
     text-decoration: none;
 }
 
-body {
-    background-color: lightgray;
+// definition
+$main_color: #393E46;
+
+@mixin max-screen($break-point) {
+    @media screen and (max-width: $break-point) {
+        @content;
+    }
 }
 
 .nav {
-    background-color: white;
-
     &__container {
-        max-width: 810px;
+        max-width: 850px;
         margin: 0 auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    &__content {
+        margin-left: 16px;
+        margin-right: 16px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 10px;
-        padding-bottom: 10px;
     }
 
     &__title {
         width: 120px;
         height: 40px;
-        background-color: #393E46;
+        background-color: $main_color;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,21 +59,54 @@ body {
     &__link {
         color: black;
         font-size: 14px;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+.mainImage {
+    &__container {
+        height: 600px;
+        margin-bottom: 90px;
+
+        @include max-screen(600px) {
+            height: 790px;
+        }
+    }
+
+    &__image {
+        background-image: url(images/2000x800.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.main {
+    width: 100%;
+
+    &__container {
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    &__content {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
 .about {
     padding-bottom: 100px;
-    background-color: white;
 
     &__container {
-        max-width: 810px;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        & > * + * {
+        & > * + * { //再利用可能なモジュールに余白持たせるの微妙な気がしたのでコンテナ->モジュールの向きで配置を決定
             margin-top: 80px;
         }
     }
@@ -74,9 +115,9 @@ body {
         line-height: 1;
         padding-bottom: 8px;;
         color: #393E46;
-        font-size: 28px;
+        font-size: 32px;
         font-weight: bold;
-        border-bottom: 1px solid #393E46;
+        border-bottom: 1px solid $main_color;
     }
 
     &__content {
@@ -86,13 +127,23 @@ body {
         & > * + * {
             margin-left: 30px;
         }
+
+        @include max-screen(600px) {
+            flex-direction: column;
+            align-items: center;
+
+            & > * + * {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
     }
 
     &__image {
         display: block;
         width: 100px;
         height: 100px;
-        background-color: #393E46;
+        background-color: $main_color;
         border-radius: 50%;
     }
 }
@@ -106,25 +157,30 @@ body {
     &__title {
         font-size: 16px;
         font-weight: bold;
-        color: #393E46;
+        color: $main_color;
     }
 
     &__description {
+        margin-top: 16px;
         font-size: 14px;
         line-height: 1.6;
-        color: #393E46;
+        color: $main_color;
     }
 }
 
 .bicycle {
+    width: 100%;
     background-color: white;
+    padding-bottom: 80px;
     
     &__container {
-        max-width: 810px;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        & > * + * {
+            margin-top: 80px;
+        }
     }
 
     //aboutとコンポーネント化したい
@@ -132,9 +188,13 @@ body {
         line-height: 1;
         padding-bottom: 8px;;
         color: #393E46;
-        font-size: 28px;
+        font-size: 32px;
         font-weight: bold;
-        border-bottom: 1px solid #393E46;
+        border-bottom: 1px solid $main_color;
+    }
+
+    &__content {
+        width: 100%;
     }
 
     &__list {
@@ -142,15 +202,64 @@ body {
         justify-content: space-between;
 
         & > * + * {
-            margin-left: 10px;
+            margin-left: 18px;
+        }
+
+        @include max-screen(600px) {
+            flex-direction: column;
+            margin-left: 26px;
+            margin-right: 26px;
+
+            & > * + * {
+                margin-left: 0;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &__item {
+        width: calc((100% - 36px)/3);
+
+        @include max-screen(600px) {
+            width: 100%;
         }
     }
 }
 
 .bicycleItem {
-    width: calc((810px - 20px)/3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & * + * {
+        margin-top: 10px;
+    }
+
     &__image {
         width: 100%;
         height: auto;
+    }
+
+    &__title {
+        font-weight: bold;
+    }
+
+    &__description {
+        font-size: 14px;
+    }
+}
+
+.footer {
+    padding-bottom: 10px;
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.copyright {
+    &__text {
+        font-size: 8px;
     }
 }
