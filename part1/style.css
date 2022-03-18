@@ -55,8 +55,15 @@ a {
 }
 
 .nav__container {
-  max-width: 810px;
+  max-width: 850px;
   margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav__content {
+  margin-left: 16px;
+  margin-right: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,8 +73,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .nav__title {
@@ -115,6 +120,12 @@ a {
   margin-bottom: 90px;
 }
 
+@media screen and (max-width: 600px) {
+  .mainImage__container {
+    height: 790px;
+  }
+}
+
 .mainImage__image {
   background-image: url(images/2000x800.png);
   background-size: cover;
@@ -122,13 +133,25 @@ a {
   height: 100%;
 }
 
+.main {
+  width: 100%;
+}
+
+.main__container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.main__content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .about {
   padding-bottom: 100px;
 }
 
 .about__container {
-  max-width: 810px;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -167,6 +190,22 @@ a {
   margin-left: 30px;
 }
 
+@media screen and (max-width: 600px) {
+  .about__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about__content > * + * {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
 .about__image {
   display: block;
   width: 100px;
@@ -196,19 +235,19 @@ a {
 }
 
 .aboutTextContent__description {
+  margin-top: 16px;
   font-size: 14px;
   line-height: 1.6;
   color: #393E46;
 }
 
 .bicycle {
+  width: 100%;
   background-color: white;
   padding-bottom: 80px;
 }
 
 .bicycle__container {
-  max-width: 810px;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,6 +273,10 @@ a {
   border-bottom: 1px solid #393E46;
 }
 
+.bicycle__content {
+  width: 100%;
+}
+
 .bicycle__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -247,8 +290,32 @@ a {
   margin-left: 18px;
 }
 
+@media screen and (max-width: 600px) {
+  .bicycle__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 26px;
+    margin-right: 26px;
+  }
+  .bicycle__list > * + * {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+.bicycle__item {
+  width: calc((100% - 36px)/3);
+}
+
+@media screen and (max-width: 600px) {
+  .bicycle__item {
+    width: 100%;
+  }
+}
+
 .bicycleItem {
-  width: calc((810px - 36px)/3);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
