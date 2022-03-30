@@ -5,38 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b6dd203ab8.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <header class="header">
-        <div class="header__container">
-            <h1 class="header__title">My Work</h1>
+    <header class="header section">
+        <div class="headerContent l-container l-rowBetween">
+            <div class="logo">
+                <h1 class="logo__text">My Work</h1>
+            </div>  
             <div class="nav">
-                <div class="nav__container">
-                    <div class="nav__list">
-                        <div class="nav__item">
+                <div class="navContent">
+                    <div class="navList l-rowBetween l-rowSpace30">
+                        <div class="navList__item">
                             <div class="navItem">
-                                <a href="" class="navItem__link">About</a>
+                                <a href="" class="navItem__link description">About</a>
                             </div>
                         </div>
-                        <div class="nav__item">
+                        <div class="navList__item">
                             <div class="navItem">
-                                <a href="" class="navItem__link">Works</a>
+                                <a href="" class="navItem__link description">Works</a>
                             </div>
                         </div>
-                        <div class="nav__item">
+                        <div class="navList__item">
                             <div class="navItem">
-                                <a href="" class="navItem__link">News</a>
+                                <a href="" class="navItem__link description">News</a>
                             </div>
                         </div>
-                        <div class="nav__item">
+                        <div class="navList__item">
                             <div class="navItem">
-                                <a href="" class="navItem__link">Contact</a>
+                                <a href="" class="navItem__link description">Contact</a>
                             </div>
                         </div>
-                        <div class="nav__item">
+                        <div class="navList__item">
                             <div class="navItem">
-                                <a href="" class="navItem__link">todo(icon)</a>
+                                <a href="" class="navItem__iconLink description">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -44,109 +49,152 @@
             </div>
         </div>
     </header>
-    <div class="topImage">
-        <div class="topImage_container">
-            <div class="topImage__image"></div>
+    <div class="fullSection l-sectionBottomSpace95">
+        <div class="fullSectionContent">
+            <div class="wideImage"></div>
         </div>
     </div>
-    <div class="main">
-        <div class="main__container">
-            <div class="about">
-                <div class="about__container">
-                    <h2 class="about__title">About</h2>
-                    <div class="aboutInfo">  <!-- BlockかつElement -->
-                        <p class="aboutInfo__name">Xxxxx Ashley</p>
-                        <div class="aboutInfo__info"> <!-- info被りは微妙か? -->
-                            <p class="aboutInfo__address">2th Floor xxxxx Building x-x-x Nishiazabu, Minato-ku, Tokyo 106-0031 Japan</p>
-                            <p class="aboutInfo__tel">tel: 000-0000-0000</p>
-                            <p class="aboutInfo__url">url: www.xxxxxx.jp</p>
-                            <p class="aboutInfo__mail">mail: xxx@xxxxxx.jp</p>
+    <div class="main section">
+        <div class="mainContent l-container">
+            <!--about-->
+            <div class="section l-sectionBottomSpace135">            
+                <div class="sectionContent l-columnCenter l-columnSpace75">
+                    <div class="sectionTitle">
+                        <h2 class="sectionTitle__text">About</h2>
+                    </div>
+                    <div class="l-columnLeft l-columnSpace40">  <!--Layoutクラス名で微妙かも-->
+                        <p class="description">Xxxxx Ashley</p>
+                        <div class="description">
+                            <p class="">2th Floor xxxxx Building x-x-x Nishiazabu, Minato-ku, Tokyo 106-0031 Japan</p>
+                            <p class="">tel: 000-0000-0000</p>
+                            <p class="">url: www.xxxxxx.jp</p>
+                            <p class="">mail: xxx@xxxxxx.jp</p>
                         </div> 
-                        <p class="aboutInfo__text">プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        <p class="description">プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
                     </div>
                 </div>
             </div>
-            <div class="works">
-                <div class="works__container">
-                    <h2 class="works__title">Works</h2>
-                    <div class="works__list">
-                        <div class="works__item">
-                            <div class="worksItem">
-                                <img src="" alt="" class="worksItem__image">
+            <!--works-->
+            <div class="section l-sectionBottomSpace165">
+                <div class="sectionContent l-columnCenter l-columnSpace75">
+                    <div class="sectionTitle">
+                        <h2 class="sectionTitle__text">Works</h2>
+                    </div>
+                    <div class="l-grid">
+                        <div class="l-grid__item">
+                            <div class="">
+                                <img src="images/250x160.png" alt="" class="">
+                            </div>
+                        </div>
+                        <div class="l-grid__item">
+                            <div class="">
+                                <img src="images/250x160.png" alt="" class="">
+                            </div>
+                        </div>
+                        <div class="l-grid__item">
+                            <div class="">
+                                <img src="images/250x160.png" alt="" class="">
+                            </div>
+                        </div>
+                        <div class="l-grid__item">
+                            <div class="">
+                                <img src="images/250x160.png" alt="" class="">
+                            </div>
+                        </div>
+                        <div class="l-grid__item">
+                            <div class="">
+                                <img src="images/250x160.png" alt="" class="">
+                            </div>
+                        </div>
+                        <div class="l-grid__item">
+                            <div class="">
+                                <img src="images/250x160.png" alt="" class="">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="news">
-                <div class="news__container">
-                   <div class="news__list">
-                       <div class="news__item">
-                           <div class="newsItem">
-                               <p class="newsItem__date">2020.xx.xx</p>
-                               <p class="newItem__text">デザイン雑誌「ＸＸＸＸＸＸ Vol.11』に掲載していただきました。</p>
-                           </div>
-                       </div>
-                       <div class="news__item">
-                            <div class="newsItem">
-                                <p class="newsItem__date">2020.xx.xx</p>
-                                <p class="newItem__text">ＸＸ月ＸＸ日から写真集「ＸＸＸＸＸＸＸ」の販売を開始します。</p>
+            <!--news-->
+            <div class="section l-sectionBottomSpace135">
+                <div class="sectionContent l-columnCenter l-columnSpace75">
+                    <div class="sectionTitle">
+                        <h2 class="sectionTitle__text">News</h2>
+                    </div>
+                    <div class="borderedList l-columnFillBordered">
+                        <div class="borderedList__item">
+                            <div class="borderedListItem l-columnCenter">
+                                <div class="l-rowLeft l-rowSpace75 description">
+                                    <p class="">2020.XX.XX</p>
+                                    <p class="">デザイン雑誌「ＸＸＸＸＸＸ Vol.11』に掲載していただきました。</p> 
+                                </div>
                             </div>
                         </div>
-                        <div class="news__item">
-                            <div class="newsItem">
-                                <p class="newsItem__date">2019.xx.xx</p>
-                                <p class="newItem__text">【イベント開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト</p>
+                        <div class="borderedList__item">
+                            <div class="borderedListItem l-columnCenter">
+                                <div class="l-rowLeft l-rowSpace75 description">
+                                    <p class="">2020.XX.XX</p>
+                                    <p class="">ＸＸ月ＸＸ日から写真集「ＸＸＸＸＸＸＸ」の販売を開始します。</p>                                   
+                                </div>
                             </div>
                         </div>
-                        <div class="news__item">
-                            <div class="newsItem">
-                                <p class="newsItem__date">2019.xx.xx</p>
-                                <p class="newItem__text">デザイン雑誌「ＸＸＸＸＸＸ Vol.10』に掲載していただきました。</p>
+                        <div class="borderedList__item">
+                            <div class="borderedListItem l-columnCenter">
+                                <div class="l-rowLeft l-rowSpace75 description">
+                                    <p class="">2019.xx.xx</p>
+                                    <p class="">【イベント開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト</p>                                   
+                                </div>
                             </div>
                         </div>
-                        <div class="news__item">
-                            <div class="newsItem">
-                                <p class="newsItem__date">2019.xx.xx</p>
-                                <p class="newItem__text">【個展開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト</p>
+                        <div class="borderedList__item">
+                            <div class="borderedListItem l-columnCenter">
+                                <div class="l-rowLeft l-rowSpace75 description">
+                                    <p class="">2019.XX.XX</p>
+                                    <p class="">デザイン雑誌「ＸＸＸＸＸＸ Vol.10』に掲載していただきました。</p>
+                                </div>    
                             </div>
                         </div>
-                   </div> 
+                        <div class="borderedList__item">
+                            <div class="borderedListItem l-columnCenter">
+                                <div class="l-rowLeft l-rowSpace75 description">                            
+                                    <p class="">2019.XX.XX</p>
+                                    <p class="">【個展開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト</p>                            
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
                 </div>
             </div>
-            <div class="contact">
-                <div class="contact__container">
-                    <h2 class="contact__title">Contact</h2>
-                    <div class="contact__list">
-                        <div class="contact__item">
-                            <div class="contactItem">
-                                <p class="contactItem__title">NAME</p>
-                                <input type="text" class="contactItem__input">
-                            </div>
-                        </div>
-                        <div class="contact__item">
-                            <div class="contactItem">
-                                <p class="contactItem__title">E-mail</p>
-                                <input type="text" class="contactItem__input">
-                            </div>
-                        </div>
-                        <div class="contact__item">
-                            <div class="contactItem">
-                                <p class="contactItem__title">MESSAGE</p>
-                                <input type="text" class="contactItem__input-message">
-                            </div>
+            <!--contact-->
+            <div class="section l-sectionBottomSpace130">
+                <div class="sectionContent l-columnCenter l-columnSpace75">
+                    <div class="sectionTitle">
+                        <h2 class="sectionTitle__text">Contact</h2>
+                    </div>
+                    <div class="l-columnCenter l-colmunSpace12">            
+                        <div class="inputArea l-rowBetween">
+                            <p class="inputArea__title description">NAME</p>
+                            <input type="text" class="inputArea__input">
+                        </div>            
+                        <div class="inputArea l-rowBetween">
+                            <p class="inputArea__title description">E-mail</p>
+                            <input type="text" class="inputArea__input">
+                        </div>            
+                        <div class="inputTextarea l-rowBetween">
+                            <p class="inputTextarea__title description">MESSAGE</p>
+                            <textarea class="inputTextarea__textarea"></textarea>
                         </div>
                     </div>
-                    <button class="contact__button">送信</button>
-                </div>
-            </div>
+                    <button class="submitButton">送信</button>
+                </div>                
+            </div>    
         </div>
     </div>
-    <footer class="footer">
-        <div class="footer__container">
-            <div class="copyright">
-                <div class="copyright__container"></div>
-                <small class="copyright__text">©︎ 2020 My Work</small>
+    <footer class="footer section">
+        <div class="footerContent">
+            <div class="l-container l-columnCenter">
+                <div class="copyright l-columnCenter">
+                    <small class="copyright__text">©︎ 2020 My Work</small>
+                </div>
             </div>
         </div>
     </footer>

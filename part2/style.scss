@@ -1,5 +1,271 @@
+// SMACSS + BEMっぽく
+
+//Definition
+$fontColor: #252A2E;
+$expectedGridItemSize: (width: 250, height: 160);
+
+@mixin max-screen($break-point) {
+    @media screen and (max-width: $break-point) {
+        @content;
+    }
+}
+
+@mixin scaleHeight($ratio) {
+    position: relative;
+    &::before {
+        position: absolute;
+        top: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: calc(100%*#{map-get($map: $ratio, $key: height)}/#{map-get($map: $ratio, $key: width)});
+    }
+}
+
+@mixin makeHSpaceBetweenChildren($value) {
+    & > * + * {
+        margin-left: #{$value}px;
+    }
+}
+
+@mixin makeVSpaceBetweenChildren($value) {
+    & > * + * {
+        margin-top: #{$value}px;
+    }
+}
+
+@mixin makeGrid($itemsPerLine, $innerSpace, $lineSpace, $itemSizeRatio) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__item {
+        width: calc((100% - #{$innerSpace}px * (#{$itemsPerLine} - 1))/ #{$itemsPerLine});
+        margin-top: #{$lineSpace}px;
+        @include scaleHeight($itemSizeRatio);
+
+        &:nth-child(-n + #{$itemsPerLine}) {
+            margin-top: 0px;
+        }
+    }
+}
+
+//Base
 *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
 a {
     text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+//Layout
+.l-container {
+    max-width: 870px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.l-grid {
+    @include makeGrid(3, 30, 30, $expectedGridItemSize);
+}
+
+.l-rowBetween {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.l-rowLeft {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.l-rowSpace30 {
+    @include makeHSpaceBetweenChildren(30);
+}
+
+.l-rowSpace75 {
+    @include makeHSpaceBetweenChildren(75);
+}
+
+.l-columnFill { // l-columnCenterとの差が微妙
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > * {
+        display: block;
+        width: 100%;
+    }
+
+    &Bordered {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        & > * {
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid lightgray;
+        }
+        & > :first-child {
+            border-top: 1px solid lightgray;
+        }
+    }
+}
+
+.l-columnCenter {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-columnLeft {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.l-colmunSpace12 {
+    @include makeVSpaceBetweenChildren(12);
+}
+
+.l-columnSpace40 {
+    @include makeVSpaceBetweenChildren(40);
+}
+
+.l-columnSpace75 {
+    @include makeVSpaceBetweenChildren(70);
+}
+
+.l-sectionBottomSpace95 {
+    margin-bottom: 95px;
+}
+
+.l-sectionBottomSpace130 {
+    margin-bottom: 130px;
+}
+
+.l-sectionBottomSpace135 {
+    margin-bottom: 135px;
+}
+
+.l-sectionBottomSpace165 {
+    margin-bottom: 165px;
+}
+
+//Module
+.logo__text {
+    font-size: 26px;
+    font-weight: normal;
+    columns: $fontColor;
+}
+
+.description {
+    font-size: 14px;
+    color: $fontColor;
+}
+
+.section {
+    width: 100%;
+    &__title {
+        font-size: 24px;
+    }
+}
+
+.header {
+    &Content {
+        height: 270px;
+    }
+}
+
+.navItem {
+    &__iconLink {
+        font-size: 24px;
+    }
+}
+
+.wideImage {
+    width: 100%;
+    height: 420px;
+    background-color: lightgray;
+}
+
+.borderedList {
+    &__item {
+        height: 50px;
+    }
+}
+
+.borderedListItem {
+    margin-left: 15px;
+}
+
+.inputArea {
+    height: 45px;
+
+    &__title {
+        align-self: flex-start;  //Layoutに関する情報をElementが持ってしまうので微妙か, かといって全種類のflex用意するのも、、、
+    }
+
+    &__input {
+        display: block;
+        width: 85%;
+        height: 100%;
+        border: 1px solid lightgray;
+    }
+}
+
+.inputTextarea {
+    &__title {
+        align-self: flex-start;  //Layoutに関する情報をElementが持ってしまうので微妙か, かといって全種類のflex用意するのも、、、
+    }
+
+    &__textarea {
+        display: block;
+        width: 85%;
+        height: 160px;
+        border: 1px solid lightgray;
+        resize: vertical;
+    }
+}
+
+.submitButton {
+    width: 200px;
+    height: 54px;
+    background-color: #24292e;
+    font-size: 14px;
+    color: white;
+}
+
+.footer {
+    &Content {
+        height: 35px;
+        background-color: #24292e;
+    }
+}
+
+.copyright {
+    &__text {
+        color: white;
+        font-size: 8px;
+    }
 }
