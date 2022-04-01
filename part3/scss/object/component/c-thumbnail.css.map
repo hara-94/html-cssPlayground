@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACT,KAAK,EAAE,IAAI;CAKd;;AAHI,AAAD,oBAAS,CAAC;EACN,aAAa,EAAE,GAAG;CACrB",
+    "sources": [
+        "c-thumbnail.scss"
+    ],
+    "names": [],
+    "file": "c-thumbnail.css"
+}
