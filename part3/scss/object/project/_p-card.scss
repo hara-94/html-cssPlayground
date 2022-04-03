@@ -1,0 +1,24 @@
+.p-card {
+    &--mini {
+        &__thumbnail { 
+            
+        }
+
+        &__title {
+
+        }
+
+        &__link {
+            align-self: center;
+        }
+
+        &__linkText { 
+            line-height: 1.2;
+            color: $black;
+        }
+
+        &__linkBorder {
+            background-color: $black;
+        }
+    }
+}

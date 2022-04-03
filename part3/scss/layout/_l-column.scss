@@ -1,0 +1,9 @@
+.l-column {
+    display: flex;
+    flex-direction: column;
+
+    &__inline {
+        display: inline-flex;
+        flex-direction: column;
+    }
+}
