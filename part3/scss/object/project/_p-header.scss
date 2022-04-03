@@ -1,0 +1,12 @@
+@import "../../foundation/variable.scss";
+
+.p-header {
+    &__top {
+        height: 70px;
+    }
+
+    &__bottom {
+        height: 40px;
+        background-color: $black;
+    }
+}
