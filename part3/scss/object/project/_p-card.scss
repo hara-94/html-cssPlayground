@@ -1,11 +1,11 @@
 .p-card {
     &--mini {
         &__thumbnail { 
-            
+            width: 100%;
         }
 
         &__title {
-
+            columns: $black;
         }
 
         &__link {
@@ -20,5 +20,35 @@
         &__linkBorder {
             background-color: $black;
         }
+    }
+
+    &__title {
+        color: $black;
+    }
+
+    &__info {
+        color: $black;
+    }
+
+    &__thumbnail {
+        width: 100%;
+    }
+
+    &__text {
+        width: calc(100% - 80px);
+        align-self: center;
+    }
+
+    &__link {
+        align-self: center;
+    }
+
+    &__linkText { 
+        line-height: 1.2;
+        color: $black;
+    }
+
+    &__linkBorder {
+        background-color: $black;
     }
 }

@@ -1,0 +1,1 @@
+配置/Layoutに関数情報をprojectに持たせてもいいのか(align-selfなど)

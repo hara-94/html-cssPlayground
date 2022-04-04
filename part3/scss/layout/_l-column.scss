@@ -2,8 +2,15 @@
     display: flex;
     flex-direction: column;
 
-    &__inline {
+    &--inline {
         display: inline-flex;
         flex-direction: column;
+    }
+
+    &__item80 {
+        margin-bottom: 80px;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
