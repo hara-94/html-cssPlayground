@@ -7,6 +7,20 @@
         flex-direction: column;
     }
 
+    &__item35 {
+        margin-bottom: 35px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item60 {
+        margin-bottom: 60px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     &__item80 {
         margin-bottom: 80px;
         &:last-child {
