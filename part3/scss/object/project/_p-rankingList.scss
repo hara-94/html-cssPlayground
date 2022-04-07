@@ -1,0 +1,23 @@
+.p-rankingList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        margin-bottom: 33px;
+    }
+
+    &__list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        margin-bottom: 28px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

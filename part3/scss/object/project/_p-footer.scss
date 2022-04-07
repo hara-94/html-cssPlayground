@@ -1,0 +1,36 @@
+.p-footer {
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 140px;
+
+    &__list {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        @include max-screen(767px) {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        margin-right: 60px;
+        width: calc((100% - 120px) / 3);
+
+        @include max-screen(767px) {
+            width: 100%;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
+}

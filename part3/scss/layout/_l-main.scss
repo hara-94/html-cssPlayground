@@ -1,0 +1,12 @@
+.l-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 70px;
+
+    @include max-screen(767px) {
+        flex-direction: column;
+    }
+}

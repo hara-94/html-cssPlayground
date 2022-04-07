@@ -1,0 +1,37 @@
+.l-column {
+    display: flex;
+    flex-direction: column;
+
+    &--inline {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    &__item5 {
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item35 {
+        margin-bottom: 35px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item60 {
+        margin-bottom: 60px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item80 {
+        margin-bottom: 80px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
