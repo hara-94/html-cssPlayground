@@ -1,3 +1,7 @@
 .l-content {
     width: 65%;
+
+    @include max-screen(767px) {
+        width: 100%;
+    }
 }
